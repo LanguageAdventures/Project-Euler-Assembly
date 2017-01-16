@@ -54,10 +54,10 @@ section '.idata' import data readable
 
 
   isPalindrome: ; eax holds the number
+	push eax
+
 	cmp eax, 10
 	jl isPalindrome.done
-
-	push eax
 
 	mov edi, 1
 	mov esi, 10
