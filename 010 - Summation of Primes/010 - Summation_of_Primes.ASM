@@ -1,5 +1,5 @@
-format PE64 console
-include "win64ax.inc"
+format PE console
+include "win32ax.inc"
 
   start:
 	mov [num], 5
@@ -22,12 +22,13 @@ include "win64ax.inc"
 	mov eax, sum
 	mov [eax], ebx
 	mov [eax+4], esi
-	mov rax, [sum]
 
-	cinvoke printf, formatstring, rax
+	push sum
+	call int64ToStr
+
+	cinvoke printf, eax
 	invoke	ExitProcess, 0
 
-	formatstring dq "%llu", 13, 10, 0
 	num dd ?
 	sqrt dd ?
 	sum dq 0
@@ -67,10 +68,13 @@ include "win64ax.inc"
 	ret
 
 
+include '..\_Shared\Int64ToStr.asm'
+
+
 section '.idata' import data readable
 
 	library msvcrt, 'msvcrt.dll',\
 		kernel32, 'kernel32.dll'
 
-	import msvcrt, printf, 'printf'
+	import msvcrt, printf, 'printf', malloc, 'malloc'
 	import kernel32, ExitProcess, 'ExitProcess'
