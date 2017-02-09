@@ -31,7 +31,6 @@ include "win64ax.inc"
 	jmp start.loopDiv	; try to divide with this number again
 
   .finish:
-	; print max using printf function of c
 	cinvoke printf, formatstring, [max]
 	invoke	ExitProcess, 0
 

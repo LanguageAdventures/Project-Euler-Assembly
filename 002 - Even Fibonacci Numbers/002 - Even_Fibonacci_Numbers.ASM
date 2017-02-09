@@ -20,7 +20,6 @@ include "win32ax.inc"
 	jmp start.loop		; go to start
 
   .finish:
-	; print sum using printf function of c
 	cinvoke printf, formatstring, edx
 	invoke ExitProcess, 0
 
