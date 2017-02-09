@@ -34,7 +34,6 @@ include "win32ax.inc"
 	mul edx
 	mul ebx 		; a.b.c
 
-	; print sum using printf function of c
 	cinvoke printf, formatstring, eax
 	invoke	ExitProcess, 0
 

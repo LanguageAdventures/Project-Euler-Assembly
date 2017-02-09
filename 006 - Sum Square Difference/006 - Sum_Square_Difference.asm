@@ -28,7 +28,6 @@ include "win32ax.inc"
 
 	sub eax, ecx
 
-	; print sum using printf function of c
 	cinvoke printf, formatstring, eax
 	invoke	ExitProcess, 0
 

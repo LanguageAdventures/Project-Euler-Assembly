@@ -33,7 +33,6 @@ include "win32ax.inc"
 	jmp start.loopIn
 
   .loopDone:
-	; print sum using printf function of c
 	cinvoke printf, formatstring, [max]
 	invoke	ExitProcess, 0
 

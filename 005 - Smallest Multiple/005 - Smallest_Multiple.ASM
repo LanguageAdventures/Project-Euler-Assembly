@@ -48,8 +48,6 @@ include "win32ax.inc"
 	jmp start.loopMul
 
   .loopMulDone:
-
-	; print sum using printf function of c
 	cinvoke printf, formatstring, eax
 	invoke	ExitProcess, 0
 

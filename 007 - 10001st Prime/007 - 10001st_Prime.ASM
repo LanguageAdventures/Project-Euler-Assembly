@@ -32,7 +32,6 @@ include "win32ax.inc"
 	jmp start.loopOut
 
   .loopDone:
-	; print sum using printf function of c
 	cinvoke printf, formatstring, [primes+(9999*4)]
 	invoke	ExitProcess, 0
 
